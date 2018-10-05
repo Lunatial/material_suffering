@@ -1,22 +1,24 @@
+import uuidv1 from 'uuid/v1'
+
 export const muscles = [
-    'shoulders', 'chest', 'arms', 'back', 'legs'
+    'shoulders', 'chest', 'arms', 'back', 'butt', 'legs'
 ]
 
 export const exercises = [
     {
-        id: 'overhead-press',
+        id: uuidv1(),
         title: 'Overhead Press',
-        description: 'Delts exercise...',
+        description: 'The press, overhead press or shoulder press is a weight training exercise with many variations, typically performed while standing, in which a weight is pressed straight upwards from racking position until the arms are locked out overhead, while the legs, lower back and abs maintain balance. The exercise helps build muscular shoulders with bigger arms.',
         muscles: 'shoulders'
     },
     {
-        id: 'dips',
+        id: uuidv1(),
         title: 'Dips',
         description: 'Triceps exercise...',
         muscles: 'arms'
     },
     {
-        id: 'barbell-curls',
+        id: uuidv1(),
         title: 'Barbell Curls',
         description: 'Biceps exercise...',
         muscles: 'arms'
@@ -28,21 +30,27 @@ export const exercises = [
         muscles: 'chest'
     },
     {
-        id: 'pull-ups',
+        id: uuidv1(),
         title: 'Pull Ups',
         description: 'Back and biceps exercise...',
         muscles: 'back'
     },
     {
-        id: 'deadlifts',
+        id: uuidv1(),
         title: 'Deadlifts',
         description: 'Back and leg exercise...',
         muscles: 'back'
     },
     {
-        id: 'squats',
+        id: uuidv1(),
         title: 'Squats',
         description: 'Legs exercise...',
         muscles: 'legs'
+    },
+    {
+        id: uuidv1(),
+        title: 'Hydrants With Leg Extension',
+        description: 'Hydrants With Leg Extension exercise...',
+        muscles: 'butt'
     },
 ]
