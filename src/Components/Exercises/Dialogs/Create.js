@@ -13,18 +13,14 @@ import {
     InputLabel,
     withStyles
 } from '@material-ui/core';
+
+import {Add} from '@material-ui/icons';
+
 import uuidv1 from 'uuid/v1';
 
 const styles = theme => ({
-    root: {
-        display: 'flex',
-        flexWrap: 'wrap',
-    },
     formControl: {
         width: 500
-    },
-    selectEmpty: {
-        marginTop: theme.spacing.unit * 2,
     },
 });
 
@@ -90,7 +86,7 @@ class CreateDialog extends Component {
                     mini
                     style={{fontSize: 30}}
                 >
-                    +
+                    <Add/>
                 </Button>
 
                 <Dialog
