@@ -56,7 +56,7 @@ class App extends Component {
         this.setState(({ exercises, exercise }) => ({
             exercises: exercises.filter(ex => ex.id !== id),
             editMode: false,
-            exercise: exercise.id === id ? {} : exercise // instead of {}
+            exercise: exercise.id === id ? {} : exercise
         }));
 
     handleExerciseSelectEdit = id =>

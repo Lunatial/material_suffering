@@ -19,7 +19,6 @@ class Form extends Component {
 
         this.state = this.getInitState()
     }
-    state = this.getInitState();
 
     getInitState() {
         const {exercise} = this.props;
@@ -31,10 +30,8 @@ class Form extends Component {
         }
     }
 
-    componentWillReceiveProps({exercise}) {
-        this.setState({
-            ...exercise
-        })
+    static getDerivedStateFromProps({exercise}) {
+        return  exercise || null
     }
 
     handleChange = name => ({target: {value}}) =>
