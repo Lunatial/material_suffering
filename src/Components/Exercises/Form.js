@@ -3,14 +3,8 @@ import {TextField, Select, Button} from '@material-ui/core'
 import {FormControl} from '@material-ui/core'
 import {InputLabel} from '@material-ui/core'
 import {MenuItem} from '@material-ui/core'
-import {withStyles} from '@material-ui/core'
 import uuidv1 from "uuid/v1";
 
-const styles = theme => ({
-    FormControl: {
-        width: 300
-    }
-});
 
 class Form extends Component {
 
@@ -30,9 +24,6 @@ class Form extends Component {
         }
     }
 
-    static getDerivedStateFromProps({exercise}) {
-        return  exercise || null
-    }
 
     handleChange = name => ({target: {value}}) =>
         this.setState({
@@ -47,12 +38,11 @@ class Form extends Component {
             ...this.state
         });
 
-        this.setState(this.getInitState())
     };
 
     render() {
         const {title, description, muscles} = this.state;
-        const {classes, exercise, muscles: categories} = this.props;
+        const {exercise, muscles: categories} = this.props;
 
         return <form>
             <TextField
@@ -60,10 +50,10 @@ class Form extends Component {
                 value={title}
                 onChange={this.handleChange('title')}
                 margin="normal"
-                className={classes.FormControl}
+                fullWidth
             />
             <br/>
-            <FormControl className={classes.FormControl}>
+            <FormControl fullWidth>
                 <InputLabel htmlFor="muscles">
                     Muscles
                 </InputLabel>
@@ -86,13 +76,14 @@ class Form extends Component {
                 value={description}
                 onChange={this.handleChange('description')}
                 margin="normal"
-                className={classes.FormControl}
+                fullWidth
             />
             <br/>
             <Button
                 color="primary"
                 variant="raised"
                 onClick={this.handleSubmit}
+                disabled={!title || !muscles}
             >
                 {exercise ? 'Edit' : 'Create'}
             </Button>
@@ -100,4 +91,4 @@ class Form extends Component {
     }
 }
 
-export default withStyles(styles)(Form)
+export default Form

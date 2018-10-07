@@ -12,7 +12,8 @@ import {
 
 import {Edit, Delete} from '@material-ui/icons';
 
-import Form from './Form'
+import Form from './Form';
+import uuidv1 from "uuid/v1";
 
 const style = {
     Paper: {
@@ -80,6 +81,7 @@ export default ({
             <Paper style={style.Paper}>
                 {editMode
                     ? <Form
+                        key={uuidv1()}
                         exercise={exercise}
                         muscles={muscles}
                         onSubmit={onEdit}
@@ -87,12 +89,12 @@ export default ({
                     : <Fragment>
                         <Typography
                             variant="display1"
+                            gutterBottom
                         >
                             {title}
                         </Typography>
                         < Typography
                             variant="subheading"
-                            style={{marginTop: 20}}
                         >
                             {description}
                         </Typography>

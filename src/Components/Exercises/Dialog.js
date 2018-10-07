@@ -49,6 +49,8 @@ class CreateDialog extends Component {
                 <Dialog
                     open={open}
                     onClose={this.handleToggle}
+                    fullWidth
+                    maxWidth='xs'
                 >
                     <DialogTitle>
                         Create a new Exercise
